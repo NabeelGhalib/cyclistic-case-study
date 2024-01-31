@@ -267,7 +267,7 @@ select member_casual ,
 count(ride_id) as total_count,
 min(ride_length) as min_ride_length,
 max(ride_length) as max_ride_length
-from cycletripsall
+from cycletrips
 where ride_length between '00:01:00' and '00:10:00'  
 group by member_casual
  
@@ -275,7 +275,7 @@ select member_casual ,
 count(ride_id) as total_count,
 min(ride_length) as min_ride_length,
 max(ride_length) as max_ride_length
-from cycletripsall
+from cycletrips
 where ride_length between '00:10:01' and '00:20:00'  
 group by member_casual
  
@@ -283,7 +283,7 @@ select member_casual ,
 count(ride_id) as total_count,
 min(ride_length) as min_ride_length,
 max(ride_length) as max_ride_length
-from cycletripsall
+from cycletrips
 where ride_length between '00:20:01' and '00:30:00'  
 group by member_casual
  
@@ -291,7 +291,7 @@ select member_casual ,
 count(ride_id) as total_count,
 min(ride_length) as min_ride_length,
 max(ride_length) as max_ride_length
-from cycletripsall
+from cycletrips
 where ride_length between '00:30:01' and '00:40:00'  
 group by member_casual
  
@@ -299,7 +299,7 @@ select member_casual ,
 count(ride_id) as total_count,
 min(ride_length) as min_ride_length,
 max(ride_length) as max_ride_length
-from cycletripsall
+from cycletrips
 where ride_length between '00:40:01' and '00:50:00'  
 group by member_casual
  
@@ -307,7 +307,7 @@ select member_casual ,
 count(ride_id) as total_count,
 min(ride_length) as min_ride_length,
 max(ride_length) as max_ride_length
-from cycletripsall
+from cycletrips
 where ride_length between '00:50:01' and '01:00:00'  
 group by member_casual
 
@@ -315,7 +315,7 @@ select member_casual ,
 count(ride_id) as total_count,
 min(ride_length) as min_ride_length,
 max(ride_length) as max_ride_length
-from cycletripsall
+from cycletrips
 where ride_length between '01:00:01' and '02:00:00' 
 group by member_casual
 
@@ -323,7 +323,7 @@ select member_casual ,
 count(ride_id) as total_count,
 min(ride_length) as min_ride_length,
 max(ride_length) as max_ride_length
-from cycletripsall
+from cycletrips
 where ride_length between '02:00:01' and '03:00:00' 
 group by member_casual
 
@@ -331,7 +331,7 @@ select member_casual ,
 count(ride_id) as total_count,
 min(ride_length) as min_ride_length,
 max(ride_length) as max_ride_length
-from cycletripsall
+from cycletrips
 where ride_length between '03:00:01' and '04:00:00' 
 group by member_casual
 
