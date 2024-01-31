@@ -1,11 +1,13 @@
 # Cyclistic-Case-Study
 
 ### Project Overview 
+---
 
 This Data Analysis projects aims to provide insights into usage of the cyclistic program by the members and casual users. By Analyzing various aspects of the cycle trips data we can identify trends, make Data-driven recommendation to improve the company. 
 
 
 ### Scenario:
+---
 
 In the given scenario, I am a data analyst working in the marketing analyst team at Cyclistic,a bike share company in Chicago.
 The director of marketing believes the company’s future success depends on maximizing the number of annual memberships.
@@ -20,15 +22,18 @@ Cyclistic Executive Team
 Marketing Analytics Team 
 
 ### Six Phases of Data Analysis:
+---
 
-#### 1.ASK
-#### 2.PREPARE
-#### 3.PROCESS
-#### 4.ANALYZE
-#### 5.SHARE
-#### 6.ACT
+#### ASK
+#### PREPARE
+#### PROCESS
+#### ANALYZE
+#### SHARE
+#### ACT
+---
 
 ### Ask:
+---
 
 #### Identify the business task:
 
@@ -42,6 +47,7 @@ Therefore, the results of this analysis will be used to design a new marketing s
    
 
 ### Preparing Data:
+---
 
 
 ### Data Sources Used:
@@ -84,6 +90,8 @@ copy cycle_trip_04 from 'F:\Data Analytics\Case study\Cyclistic\202004-divvy-tri
 uploaded all the other dataset by the above method
 
 ### Processing data (Data Cleaning):
+---
+
 - Check for null values
 - Check for the formats
 - Check for Duplicates
@@ -196,6 +204,7 @@ Now the data is ready for analysis.
 
 
 ### Analyze:
+---
 
 - Finding total number of casual and member users and their minimum ride_length, maximum ride_length and average ride_length.
   
@@ -242,14 +251,14 @@ order by member_casual,rides desc
 
 
 - Finding the total number of casual and member users who ride for the following time intervals:
-  
-                           - 1 min to 10 mins
-                           - 10.01 mins to 20 mins
-  			   - 20.01 mins to 30 mins
-		           - 30.01 mins to 40 mins
-			   - 40.01 mins to 50 mins
-			   - 50.01 mins to 1 hour
-			     and so on
+
+- 1 min to 10 mins
+- 10.01 mins to 20 mins
+- 20.01 mins to 30 mins
+- 30.01 mins to 40 mins
+- 40.01 mins to 50 mins
+- 50.01 mins to 1 hour
+  and so on
 
 
 ```sql
@@ -331,11 +340,14 @@ group by member_casual
 #### Output:
 
 
-![Screenshot (66)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/c81f3788-072b-4a75-bda3-9ba8db664be3) ![Screenshot (67)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/60cbbbf8-5082-4f97-aa1a-893f19b49e09)
+![Screenshot (66)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/c81f3788-072b-4a75-bda3-9ba8db664be3) 
+![Screenshot (67)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/60cbbbf8-5082-4f97-aa1a-893f19b49e09)
 
-![Screenshot (68)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/5fc4ee8e-4489-412e-83ff-3dc82fad2335) ![Screenshot (69)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/17e26531-35cc-4df1-bdca-5904dad8d5d5)
+![Screenshot (68)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/5fc4ee8e-4489-412e-83ff-3dc82fad2335) 
+![Screenshot (69)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/17e26531-35cc-4df1-bdca-5904dad8d5d5)
 
-![Screenshot (70)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/9f085633-aeb9-4ef6-9492-6203d70ebafa) ![Screenshot (71)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/e7c3b6ae-e07d-4b89-9f84-d2bea9f156dc)
+![Screenshot (70)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/9f085633-aeb9-4ef6-9492-6203d70ebafa) 
+![Screenshot (71)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/e7c3b6ae-e07d-4b89-9f84-d2bea9f156dc)
 
 ![Screenshot (72)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/bf4f512f-88e0-4569-ba6e-330568a3292e)
 
