@@ -25,7 +25,7 @@ Marketing Analytics Team
 #### 5.VISUALIZE
 #### 6.SHARE
 
-### ASK (Business Task):
+### Ask:
 1. How do members and casual riders use Cyclistic bikes differently?
 2. Why would casual riders buy Cyclistic annual memberships?
 3. How can Cyclistic use digital media to influence casual riders to become members?
@@ -112,7 +112,8 @@ select *, (ended_at - started_at) as ride_length
 from cycletripsall
 
 ```
-- By doing this I found at there are some negative values in ride_length , i.e. ended_at time was less than started_at ex- started_at - '2020-04-02 18:30:00' , ended_at - '2020-04-02 18:25:00' this is not possible so I assumed that the values were entered in wrong columns so I swapped the values of ended_at and started_at where the difference was in negative by doing this.
+- By doing this I found at there are some negative values in ride_length ,
+-  i.e. ended_at time was less than started_at ex- started_at - '2020-04-02 18:30:00' , ended_at - '2020-04-02 18:25:00' this is not possible so I assumed that the values were entered in wrong columns so I swapped the values of ended_at and started_at where the difference was in negative by doing this.
 
 ```sql
 
@@ -143,6 +144,23 @@ from cycletripsall
 
 Now the data is ready for analysis.
 
+### Analyze
+I found out total no. casual and member users and their minimum ride_length, maximum ride_length and average ride_length.
+
+```sql
+
+select
+member_casual,
+count(member_casual) as total,
+min(ride_length) as min_ride_length,
+max(ride_length) as max_ride_length,
+avg(ride_length) as avg_ride_length
+
+from cycletrips
+
+group by member_casual
+
+```
 
 
 
