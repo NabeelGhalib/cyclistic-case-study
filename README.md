@@ -243,13 +243,13 @@ order by member_casual,rides desc
 
 - Finding the total number of casual and member users who ride for the following time intervals:
   
-- 1 min to 10 mins
-- 10.01 mins to 20 mins
-- 20.01 mins to 30 mins
-- 30.01 mins to 40 mins
-- 40.01 mins to 50 mins
-- 50.01 mins to 1 hour
-and so on
+                           - 1 min to 10 mins
+                           - 10.01 mins to 20 mins
+  			   - 20.01 mins to 30 mins
+		           - 30.01 mins to 40 mins
+			   - 40.01 mins to 50 mins
+			   - 50.01 mins to 1 hour
+			     and so on
 
 
 ```sql
@@ -327,7 +327,9 @@ where ride_length between '03:00:01' and '04:00:00'
 group by member_casual
 
 ```
+
 #### Output:
+
 
 ![Screenshot (66)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/c81f3788-072b-4a75-bda3-9ba8db664be3) ![Screenshot (67)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/60cbbbf8-5082-4f97-aa1a-893f19b49e09)
 
