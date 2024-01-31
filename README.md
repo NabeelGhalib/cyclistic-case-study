@@ -22,8 +22,8 @@ Marketing Analytics Team
 #### 2.PREPARE
 #### 3.PROCESS
 #### 4.ANALYZE
-#### 5.VISUALIZE
-#### 6.SHARE
+#### 5.SHARE
+#### 6.ACT
 
 ### Ask:
 1. How do members and casual riders use Cyclistic bikes differently?
@@ -75,23 +75,45 @@ uploaded all the other dataset by the above method
 - Check for White spaces
 - Check for incomplete and wrong data(spelling mistakes,irrelevant data etc.)
 
-By Checking the datasets I know that all the 6 datasets that I am going to work with have same column names and those columns have same data types, so I combine them into one using union all
+### Cleaning:
+- I can find out the time it takes for every ride to complete by subtracting started_at from ended_at
+
+```sql
+
+select *, (ended_at - started_at) as ride_length
+from cycle_trip_04
+
+```
+- By doing this I found that there are some negative values in ride_length in all the datasets,
+-  i.e. ended_at time was less than started_at ex- started_at - '2020-04-02 18:30:00' , ended_at - '2020-04-02 18:25:00' this is not possible so I gathered that the values were entered in wrong columns so I swapped the values of ended_at and started_at where the difference was in negative.
+
+```sql
+
+update cycle_trip_04
+set started_at = ended_at,
+	ended_at = started_at	
+where (ended_at-started_at) < '00:00:00'
+
+```
+and did that for all the other datasets.
+
+By looking at the datasets I know that all 6 datasets that I am going to work with have matching column names and those columns have same data types, so I combine them into one using union all
 
 ```sql
 
 create view cycletripsall as
  
-(select * from cycletrip04
+(select * from cycle_trip_04
 union all
-select * from cycletrip05
+select * from cycle_trip_05
 union all
-select * from cycletrip06
+select * from cycle_trip_06
 union all
-select * from cycletrip07
+select * from cycle_trip_07
 union all
-select * from cycletrip08
+select * from cycle_trip_08
 union all
-select * from cycletrip09)
+select * from cycle_trip_09)
 
 ```
 Then I checked for null values,incomplete data and spelling mistakes in all the columns.
@@ -101,29 +123,33 @@ Then I checked for null values,incomplete data and spelling mistakes in all the 
 select * from cycletripsall
 where started_at is null
 
+select * from cycletripsall
+where ended_at is null
+
+select * from cycletripsall
+where ride_id is null
+
 ```
 and so on.
 
-- I can find out the time it takes for every ride to complete by subtracting started_at from ended_at
+```sql
+
+select length(ride_id) from cycletripsall
+
+```
+We can find out the number of characters are there for every ride_id
+There were 16 characters.
+By knowing this we can check if there are ids which does not have same no. of characters.
 
 ```sql
 
-select *, (ended_at - started_at) as ride_length
-from cycletripsall
+select ride_id from cycletripsall
+where length(ride_id) != '16'
 
 ```
-- By doing this I found at there are some negative values in ride_length ,
--  i.e. ended_at time was less than started_at ex- started_at - '2020-04-02 18:30:00' , ended_at - '2020-04-02 18:25:00' this is not possible so I assumed that the values were entered in wrong columns so I swapped the values of ended_at and started_at where the difference was in negative by doing this.
+There were none.
 
-```sql
-
-update cycletripsall
-set started_at = ended_at,
-	ended_at = started_at	
-where (ended_at-started_at) < '00:00:00'
-
-```
-I need to know the days so i could know total trips for every day of the week.
+By knowing the days I can know total trips for every day of the week.
 
 ```sql
 
@@ -131,7 +157,6 @@ select *, (ended_at-started_at) as ride_length, to_char(started_at, 'DY') as day
 from cycletripsall
 
 ```
-
 Now i saved this as a view 
 
 ```sql
@@ -141,11 +166,10 @@ select *, (ended_at-started_at) as ride_length, to_char(started_at, 'DY') as day
 from cycletripsall
 
 ```
-
 Now the data is ready for analysis.
 
 ### Analyze
-I found out total no. casual and member users and their minimum ride_length, maximum ride_length and average ride_length.
+- Finding total no. casual and member users and their minimum ride_length, maximum ride_length and average ride_length.
 
 ```sql
 
@@ -161,6 +185,23 @@ from cycletrips
 group by member_casual
 
 ```
+![Screenshot (56)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/55d00860-b35a-4cc4-abc8-76931237474a)
+
+
+- Finding number of rides for every day for casual and member users
+
+```sql
+
+select member_casual,
+started_at_day,
+count(ride_id) as rides
+
+from cycletrips
+group by member_casual,started_at_day
+order by member_casual,rides desc
+
+```
+![Screenshot (58)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/ecab46cd-8bdb-4108-92e5-33685d708668)
 
 
 
