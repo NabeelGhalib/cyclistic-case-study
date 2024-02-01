@@ -32,10 +32,10 @@ Marketing Analytics Team
 - #### ACT
 
 
-### Ask:
+### Ask
 ---
 
-#### Identify the business task:
+#### Identify the business task
 
 The key business task in this case is to discover how casual riders and Cyclistic members use their rental bikes differently. Both the Director of Marketing as well as finance analysts have concluded that annual members are more profitable.
 
@@ -46,11 +46,11 @@ Therefore, the results of this analysis will be used to design a new marketing s
 3. How can Cyclistic use digital media to influence casual riders to become members?
    
 
-### Preparing Data:
+### Preparing Data
 ---
 
 
-### Data Sources Used:
+### Data Sources Used
 
 The datasets used in this analysis have been made available by Motivate Internation Inc. 
 
@@ -59,13 +59,13 @@ This is public data that you can use to explore how different customer types are
 Note: Cyclistic is a fictional company, hence the datasets contain the name of a different company. For the purpose of this analysis, the given datasets can be used to answer the business task 
 
 
-### Tools Used:
+### Tools Used
 
 - SQL - Postgresql - Data Cleaning and Data Analysis.
 - Tableau - Data Visualization.
 
 
-### Creating tables and importing the datasets: 
+### Creating tables and importing the datasets
 
 /* I am using 6 months of data (from 2020-04 to 2020-09) */
 
@@ -89,7 +89,7 @@ copy cycle_trip_04 from 'F:\Data Analytics\Case study\Cyclistic\202004-divvy-tri
 ```
 uploaded all the other dataset by the above method
 
-### Processing data (Data Cleaning):
+### Processing data (Data Cleaning)
 ---
 
 - Check for null values
@@ -98,7 +98,7 @@ uploaded all the other dataset by the above method
 - Check for White spaces
 - Check for incomplete and wrong data(spelling mistakes,irrelevant data etc.)
 
-### Cleaning:
+### Cleaning
 - I can find out the time it takes for every ride to complete by subtracting started_at from ended_at
 
 ```sql
@@ -203,7 +203,7 @@ from cycletripsall
 Now the data is ready for analysis.
 
 
-### Analyze:
+### Analyze
 ---
 
 - Finding total number of casual and member users and their minimum ride_length, maximum ride_length and average ride_length.
@@ -224,12 +224,13 @@ group by member_casual
 
 ```
 
-#### Output:
+#### Output
 
-![Screenshot (56)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/55d00860-b35a-4cc4-abc8-76931237474a)
+![Screenshot (96)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/781d56c9-68d7-497a-87c7-053c7b70f522)
 
 
-- Finding number of rides for every day for casual and member users
+
+- Finding number of rides for every day of the week for casual and member users
   
 
 ```sql
@@ -245,7 +246,7 @@ order by member_casual,rides desc
 
 ```
 
-#### Output:
+#### Output
 
 ![Screenshot (58)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/ecab46cd-8bdb-4108-92e5-33685d708668)
 
@@ -353,7 +354,7 @@ group by member_casual
 
 ```
 
-#### Output:
+#### Output
 
 
 ![Screenshot (66)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/c81f3788-072b-4a75-bda3-9ba8db664be3) 
@@ -371,5 +372,151 @@ group by member_casual
 
 ![Screenshot (81)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/1c0a99a2-fe3a-438c-ba13-49f49c51a398)
 ![Screenshot (79)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/06c29fe0-8ec2-4cb3-a4ae-f5ac38136d03)
+
+
+- By Analyzing the data we found out that the most users ride between these durations:
+- 1 min to 10 mins
+- 10 mins to 20 mins
+- 20 mins to 30 mins
+- 30 mins to 40 mins
+- 40 mins to 50 mins
+- 1 hour to 2 hour
+
+-Now analyzing these duration for every day of the week.
+
+
+```sql
+
+select member_casual , started_at_day,
+count(ride_id) as total_count,
+min(ride_length) as min_ride_length,
+max(ride_length) as max_ride_length
+from cycletrips
+where ride_length between '00:01:00' and '00:10:00'  
+group by member_casual,started_at_day
+order by member_casual, total_count desc
+ 
+select member_casual , started_at_day,
+count(ride_id) as total_count,
+min(ride_length) as min_ride_length,
+max(ride_length) as max_ride_length
+from cycletrips
+where ride_length between '00:10:01' and '00:20:00'  
+group by member_casual,started_at_day
+order by member_casual, total_count desc
+ 
+select member_casual , started_at_day,
+count(ride_id) as total_count,
+min(ride_length) as min_ride_length,
+max(ride_length) as max_ride_length
+from cycletrips
+where ride_length between '00:20:01' and '00:30:00'  
+group by member_casual,started_at_day
+order by member_casual, total_count desc
+ 
+select member_casual , started_at_day,
+count(ride_id) as total_count,
+min(ride_length) as min_ride_length,
+max(ride_length) as max_ride_length
+from cycletrips
+where ride_length between '00:30:01' and '00:40:00'  
+group by member_casual,started_at_day
+order by member_casual, total_count desc
+ 
+select member_casual , started_at_day,
+count(ride_id) as total_count,
+min(ride_length) as min_ride_length,
+max(ride_length) as max_ride_length
+from cycletrips
+where ride_length between '00:40:01' and '00:50:00'  
+group by member_casual,started_at_day 
+order by member_casual, total_count desc
+ 
+select member_casual , started_at_day,
+count(ride_id) as total_count,
+min(ride_length) as min_ride_length,
+max(ride_length) as max_ride_length
+from cycletrips
+where ride_length between '01:00:01' and '02:00:00'  
+group by member_casual,started_at_day  
+order by member_casual, total_count desc
+
+
+```
+
+### Output 
+
+
+![Screenshot (89)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/af942048-a4f0-4f49-ab73-5a619f831779)
+![Screenshot (90)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/505ec36b-0ccd-4685-86ba-999fe798be47)
+![Screenshot (91)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/b352f1a1-4959-434a-b573-c308b779b923)
+![Screenshot (92)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/696cb461-2cb7-42d4-b7fc-6e022e1ceb21)
+![Screenshot (93)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/0fcdd934-8885-47f0-9e62-11e3f349257b)
+![Screenshot (94)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/61244692-0536-47c7-81b3-d5d8971ae796)
+
+- The days were there is most users are Saturday, Sunday and Friday.
+
+- Now finding out the top 10 used routes for the users.
+
+```sql
+
+For casual users 
+
+select 
+start_station_name,
+end_station_name,
+count(ride_id) as rides
+
+from cycletrips
+where member_casual = 'casual' and start_station_name is not null and end_station_name is not null
+group by start_station_name,end_station_name
+order by rides desc
+
+limit 10
+
+For members
+
+select 
+start_station_name,
+end_station_name,
+count(ride_id) as rides
+
+from cycletrips
+where member_casual = 'casual' and start_station_name is not null and end_station_name is not null
+group by start_station_name,end_station_name
+order by rides desc
+
+limit 10
+
+
+```
+
+### Output
+
+Casual :
+
+![Screenshot (99)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/00ed4426-281e-49aa-8503-637cbce9b2e5)
+
+Member :
+
+![Screenshot (100)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/452f45c4-da92-41c1-a300-d9c4a40ef23c)
+
+### Findings 
+
+- The casual users ride for longer duration than the members.
+- the number of rides for both the users are high on Saturday, Sunday and Friday.
+
+
+### Share
+
+- Now visualizing the Data we found by Analyzing.
+
+- Number of rides for every day of the week for casual and member users
+
+  
+![DOWALL](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/c870137b-3bff-4018-8a24-5760bc752fe7)
+
+
+
 
 
