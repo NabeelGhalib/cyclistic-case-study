@@ -6,14 +6,14 @@
 This Data Analysis projects aims to provide insights into usage of the cyclistic program by the members and casual users. By Analyzing various aspects of the cycle trips data we can identify trends, make Data-driven recommendation to improve the company. 
 
 
-### Scenario:
+### Scenario
 ---
 
 In the given scenario, I am a data analyst working in the marketing analyst team at Cyclistic,a bike share company in Chicago.
 The director of marketing believes the company’s future success depends on maximizing the number of annual memberships.
 Therefore, my team wants to understand how casual riders and annual members use Cyclistic bikes differently.
 
-### Key Stakholders:
+### Key Stakholders
 
 #### Primary Stakeholders:
 Lily Moreno - Director of Marketing,
@@ -21,7 +21,7 @@ Cyclistic Executive Team
 #### Secondary Stakeholders:
 Marketing Analytics Team 
 
-### Six Phases of Data Analysis:
+### Data Analysis
 ---
 
 - #### ASK
@@ -67,7 +67,7 @@ Note: Cyclistic is a fictional company, hence the datasets contain the name of a
 
 ### Creating tables and importing the datasets
 
-/* I am using 6 months of data (from 2020-04 to 2020-09) */
+- I am using 6 months of data (from 2020-04 to 2020-09) 
 
 ```sql
 create table cycle_trip_04(
@@ -515,6 +515,17 @@ Member :
 
   
 ![DOWALL](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/c870137b-3bff-4018-8a24-5760bc752fe7)
+
+
+
+- Number of rides for every day of the week for with ride length
+
+![RLCC](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/72788eef-56db-4984-a7e1-03f8734e5724)
+![RLMC](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/5ee04af5-f67d-4ca2-8807-4955bc2a18a2)
+
+
+![RLCMCDASH](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/0fa75de6-7426-42ec-bc12-0d7de9e34131)
+
 
 
 
