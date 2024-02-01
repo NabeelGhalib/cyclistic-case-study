@@ -24,13 +24,13 @@ Marketing Analytics Team
 ### Six Phases of Data Analysis:
 ---
 
-#### ASK
-#### PREPARE
-#### PROCESS
-#### ANALYZE
-#### SHARE
-#### ACT
----
+- #### ASK
+- #### PREPARE
+- #### PROCESS
+- #### ANALYZE
+- #### SHARE
+- #### ACT
+
 
 ### Ask:
 ---
@@ -335,6 +335,22 @@ from cycletrips
 where ride_length between '03:00:01' and '04:00:00' 
 group by member_casual
 
+select member_casual , 
+count(ride_id) as total_count,
+min(ride_length) as min_ride_length,
+max(ride_length) as max_ride_length
+from cycletrips
+where ride_length between '04:00:01' and '23:59:59' 
+group by member_casual
+
+select member_casual , 
+count(ride_id) as total_count,
+min(ride_length) as min_ride_length,
+max(ride_length) as max_ride_length
+from cycletrips
+where ride_length >= '1 day'
+group by member_casual
+
 ```
 
 #### Output:
@@ -350,6 +366,10 @@ group by member_casual
 ![Screenshot (71)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/e7c3b6ae-e07d-4b89-9f84-d2bea9f156dc)
 
 ![Screenshot (72)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/bf4f512f-88e0-4569-ba6e-330568a3292e)
+![Screenshot (75)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/eca2d09e-6d60-4d7a-aaa7-dc278fe1af79)
+![Screenshot (76)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/34345838-c46b-43bf-b1e1-f8d23c815821)
 
+![Screenshot (81)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/1c0a99a2-fe3a-438c-ba13-49f49c51a398)
+![Screenshot (79)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/06c29fe0-8ec2-4cb3-a4ae-f5ac38136d03)
 
 
