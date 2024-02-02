@@ -562,10 +562,13 @@ How do members and casual riders use Cyclistic bikes differently?
    
 ### Top recommendations
 
-- Weekend only offer - 
-- Price point friday saturday sunday weekend offer.
-- ride duration offer. between 1 to 30 mins and between 1 hour to 2 hour.
-- offers for top 10 routes used the casual users.
+## Weekend only ## offer - Provide an offer at a lower price than the annual membership price where they can use the cycle for these 3 days i.e Friday, Saturday and Sunday which will attract the casual users to convert to annual member.
+## Ride duration ## offer - an offer for casual users who ride for these durations 1) Between 1- 30 mins 2) Between 1 hour - 2 hours.
+## Top Routes ## offer - an offer based on the top 10 used routes by casual users.
+
+  
+
+
 
 
 
