@@ -195,7 +195,7 @@ from cycletripsall
 
 ```
 
-8.Now i saved this as a view 
+8.Now saving the table.
 
 
 ```sql
@@ -212,7 +212,7 @@ Now the data is ready for analysis.
 ### Analyze
 ---
 
-1. Finding total trips of casual and member users and their minimum ride_length, maximum ride_length and average ride_length.
+1. Finding  users total rides, average ride_length, minimum ride_length and maximum ride_length .
   
 
 ```sql
@@ -257,7 +257,7 @@ order by member_casual,rides desc
 ![Screenshot (58)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/ecab46cd-8bdb-4108-92e5-33685d708668)
 
 
-3. Finding the total number of casual and member users who ride for the following time intervals:
+3. Finding the total number of casual users and members who ride for the following time intervals:
 
 - Between 1 min to 10 mins
 - Between 10.01 mins to 20 mins
@@ -363,21 +363,7 @@ group by member_casual
 #### Output
 
 
-![Screenshot (66)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/c81f3788-072b-4a75-bda3-9ba8db664be3) 
-![Screenshot (67)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/60cbbbf8-5082-4f97-aa1a-893f19b49e09)
 
-![Screenshot (68)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/5fc4ee8e-4489-412e-83ff-3dc82fad2335) 
-![Screenshot (69)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/17e26531-35cc-4df1-bdca-5904dad8d5d5)
-
-![Screenshot (70)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/9f085633-aeb9-4ef6-9492-6203d70ebafa) 
-![Screenshot (71)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/e7c3b6ae-e07d-4b89-9f84-d2bea9f156dc)
-
-![Screenshot (72)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/bf4f512f-88e0-4569-ba6e-330568a3292e)
-![Screenshot (75)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/eca2d09e-6d60-4d7a-aaa7-dc278fe1af79)
-![Screenshot (76)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/34345838-c46b-43bf-b1e1-f8d23c815821)
-
-![Screenshot (81)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/1c0a99a2-fe3a-438c-ba13-49f49c51a398)
-![Screenshot (79)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/06c29fe0-8ec2-4cb3-a4ae-f5ac38136d03)
 
 
 By Analyzing the data we found out that the most users ride between these durations:
@@ -460,7 +446,8 @@ order by member_casual, total_count desc
 ![Screenshot (93)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/0fcdd934-8885-47f0-9e62-11e3f349257b)
 ![Screenshot (94)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/61244692-0536-47c7-81b3-d5d8971ae796)
 
-The most number of trips were from these following days Saturday, Sunday and Friday.
+The most number of trips were from the following days Saturday, Sunday and Friday.
+
 
 5. Now finding out the top 10 used routes for the users.
 
@@ -515,13 +502,15 @@ Member :
 1.Number of rides for every day of the week for casual and member users
 
   
-![DOWALL](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/c870137b-3bff-4018-8a24-5760bc752fe7)
+![DOWALL](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/a498d7ec-1489-4837-a000-eeca9550b1b9)
+
 
 
 2.Number of rides for ride duration
   
 
-![RLCMCDASH](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/9b3d3200-6742-4474-8b0e-eb138ee20b82)
+![RLCMCDASH](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/a6186915-1494-4704-9b6b-7f7fda521d58)
+
 
 
 
