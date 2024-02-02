@@ -206,7 +206,7 @@ Now the data is ready for analysis.
 ### Analyze
 ---
 
-- Finding total number of casual and member users and their minimum ride_length, maximum ride_length and average ride_length.
+1. Finding total trips of casual and member users and their minimum ride_length, maximum ride_length and average ride_length.
   
 
 ```sql
@@ -230,7 +230,7 @@ group by member_casual
 
 
 
-- Finding number of rides for every day of the week for casual and member users
+2. Finding number of rides for every day of the week for casual and member users
   
 
 ```sql
@@ -251,7 +251,7 @@ order by member_casual,rides desc
 ![Screenshot (58)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/ecab46cd-8bdb-4108-92e5-33685d708668)
 
 
-- Finding the total number of casual and member users who ride for the following time intervals:
+3. Finding the total number of casual and member users who ride for the following time intervals:
 
 - 1 min to 10 mins
 - 10.01 mins to 20 mins
@@ -382,7 +382,7 @@ group by member_casual
 - 40 mins to 50 mins
 - 1 hour to 2 hour
 
--Now analyzing these duration for every day of the week.
+4. Now analyzing these duration for every day of the week.
 
 
 ```sql
@@ -454,13 +454,13 @@ order by member_casual, total_count desc
 ![Screenshot (93)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/0fcdd934-8885-47f0-9e62-11e3f349257b)
 ![Screenshot (94)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/61244692-0536-47c7-81b3-d5d8971ae796)
 
-- The days were there is most users are Saturday, Sunday and Friday.
+- The most number of trips were from these following days Saturday, Sunday and Friday.
 
-- Now finding out the top 10 used routes for the users.
+5. Now finding out the top 10 used routes for the users.
 
 ```sql
 
-For casual users 
+- For casual users 
 
 select 
 start_station_name,
@@ -474,7 +474,7 @@ order by rides desc
 
 limit 10
 
-For members
+- For members
 
 select 
 start_station_name,
@@ -517,15 +517,52 @@ Member :
 ![DOWALL](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/c870137b-3bff-4018-8a24-5760bc752fe7)
 
 
+- Number of rides for ride duration
+  
 
-- Number of rides for every day of the week for with ride length
-
-![RLCC](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/72788eef-56db-4984-a7e1-03f8734e5724)
-![RLMC](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/5ee04af5-f67d-4ca2-8807-4955bc2a18a2)
+![RLCMCDASH](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/9b3d3200-6742-4474-8b0e-eb138ee20b82)
 
 
-![RLCMCDASH](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/0fa75de6-7426-42ec-bc12-0d7de9e34131)
 
+- Number of rides for each month
+
+![TRIPSMONTH](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/0737ae94-e198-4957-a0a3-dec87b6b9d61)
+
+
+## Summary of Analysis 
+
+This analysis is done on the data of these 6 months (2020/04 - 2020/09)
+
+
+- Casual users ride for  49 minutes on average.
+- Members ride for 17 minutes on average.
+
+- The most rides are in between these ride lengths 1 min - 10 mins, 10 mins - 20 mins, 20- 30 mins for members.
+- The most rides are in between these ride lengths 1 min - 10 mins, 10 mins - 20 mins, 20- 30 mins and 1 hour - 2 hour for Casual users.
+  
+- The most number of rides were on Saturday for both the users.
+- The trips are low on Monday and increases at Friday reaches peak on Saturday with slight drop off on Sunday.
+
+- Members use the bikes more consistently throughout the week.
+- Casual use the bike more on Saturday, Sunday and Friday.
+- Casual users ride atleast 2 times longer on any day of the week than members.
+
+- Most of the top 10 routes of the Casual and Member users are not same.
+
+- The most number of rides for both the users occur in these months June, August and September were August has most number of rides.
+
+  # Act
+
+  ---
+
+How do members and casual riders use Cyclistic bikes differently?
+
+- Members use the bike for regular commuting perhaps to work or school and ride duration is comparetively shorter than casual users.
+- Casual users ride for longer duration of time and the rides are lower on Monday through Thursday and rises on Friday reaches peak at Saturday then slight drop at Sunday.This suggests that they use the bike for sightseeing etc.
+   
+### Top recommendations
+
+- 
 
 
 
