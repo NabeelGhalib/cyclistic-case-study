@@ -375,12 +375,12 @@ group by member_casual
 
 
 - By Analyzing the data we found out that the most users ride between these durations:
-- 1 min to 10 mins
-- 10 mins to 20 mins
-- 20 mins to 30 mins
-- 30 mins to 40 mins
-- 40 mins to 50 mins
-- 1 hour to 2 hour
+  - 1 min to 10 mins
+  - 10 mins to 20 mins
+  - 20 mins to 30 mins
+  - 30 mins to 40 mins
+  - 40 mins to 50 mins
+  - 1 hour to 2 hour
 
 4. Now analyzing these duration for every day of the week.
 
@@ -500,11 +500,6 @@ Casual :
 Member :
 
 ![Screenshot (100)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/452f45c4-da92-41c1-a300-d9c4a40ef23c)
-
-### Findings 
-
-- The casual users ride for longer duration than the members.
-- the number of rides for both the users are high on Saturday, Sunday and Friday.
 
 
 ### Share
