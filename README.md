@@ -99,7 +99,8 @@ uploaded all the other dataset by the above method
 - Check for incomplete and wrong data(spelling mistakes,irrelevant data etc.)
 
 ### Cleaning
-- I can find out the time it takes for every ride to complete by subtracting started_at from ended_at
+
+1.I can find out the time it takes for every ride to complete by subtracting started_at from ended_at
 
 ```sql
 
@@ -107,8 +108,10 @@ select *, (ended_at - started_at) as ride_length
 from cycle_trip_04
 
 ```
-- By doing this I found that there are some negative values in ride_length in all the datasets,
--  i.e. ended_at time was less than started_at ex- started_at - '2020-04-02 18:30:00' , ended_at - '2020-04-02 18:25:00' this is not possible so I gathered that the values were entered in wrong columns so I swapped the values of ended_at and started_at where the difference was in negative.
+By doing this I found that there are some negative values in ride_length in all the datasets,
+i.e. ended_at time was less than started_at ex- started_at - '2020-04-02 18:30:00' , ended_at - '2020-04-02 18:25:00' this is not possible so I gathered that the values were entered in wrong columns.
+
+2.So I swapped the values of ended_at and started_at where the difference was in negative.
 
 ```sql
 
@@ -120,7 +123,7 @@ where (ended_at-started_at) < '00:00:00'
 ```
 and did that for all the other datasets.
 
-By looking at the datasets I know that all 6 datasets that I am going to work with have matching column names and those columns have same data types, so I combine them into one using union all
+3.By looking at the datasets I know that all 6 datasets that I am going to work with have matching column names and those columns have same data types, so I combine them into one using union all
 
 ```sql
 
@@ -139,7 +142,9 @@ union all
 select * from cycle_trip_09)
 
 ```
-Then I checked for null values,incomplete data and spelling mistakes in all the columns.
+
+4.Then I checked for null values, incomplete data and spelling mistakes in all the columns.
+
 
 ```sql
 
@@ -156,7 +161,7 @@ where ride_id is null
 and so on.
 
 
-- We can find out the number of characters are there for every ride_id
+5.Finding out the number of characters present for every ride_id
 
 
 ```sql
@@ -166,7 +171,8 @@ select length(ride_id) from cycletripsall
 ```
 
 There are 16 characters.
-By knowing this we can check if there are ids which does not have same no. of characters.
+
+6.By knowing this we can check if there are ids which does not have same no. of characters.
 
 
 ```sql
@@ -179,7 +185,7 @@ where length(ride_id) != '16'
 There were none.
 
 
-By knowing the days I can know total trips for every day of the week.
+7.Finding total rides for every day of the week.
 
 
 ```sql
@@ -189,7 +195,7 @@ from cycletripsall
 
 ```
 
-Now i saved this as a view 
+8.Now i saved this as a view 
 
 
 ```sql
@@ -253,12 +259,12 @@ order by member_casual,rides desc
 
 3. Finding the total number of casual and member users who ride for the following time intervals:
 
-- 1 min to 10 mins
-- 10.01 mins to 20 mins
-- 20.01 mins to 30 mins
-- 30.01 mins to 40 mins
-- 40.01 mins to 50 mins
-- 50.01 mins to 1 hour
+- Between 1 min to 10 mins
+- Between 10.01 mins to 20 mins
+- Between 20.01 mins to 30 mins
+- Between 30.01 mins to 40 mins
+- Between 40.01 mins to 50 mins
+- Between 50.01 mins to 1 hour
   and so on
 
 
@@ -374,7 +380,7 @@ group by member_casual
 ![Screenshot (79)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/06c29fe0-8ec2-4cb3-a4ae-f5ac38136d03)
 
 
-- By Analyzing the data we found out that the most users ride between these durations:
+By Analyzing the data we found out that the most users ride between these durations:
   - 1 min to 10 mins
   - 10 mins to 20 mins
   - 20 mins to 30 mins
@@ -454,7 +460,7 @@ order by member_casual, total_count desc
 ![Screenshot (93)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/0fcdd934-8885-47f0-9e62-11e3f349257b)
 ![Screenshot (94)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/61244692-0536-47c7-81b3-d5d8971ae796)
 
-- The most number of trips were from these following days Saturday, Sunday and Friday.
+The most number of trips were from these following days Saturday, Sunday and Friday.
 
 5. Now finding out the top 10 used routes for the users.
 
@@ -504,61 +510,62 @@ Member :
 
 ### Share
 
-- Now visualizing the Data we found by Analyzing.
+#### Now visualizing the Analyzed Data.
 
-- Number of rides for every day of the week for casual and member users
+1.Number of rides for every day of the week for casual and member users
 
   
 ![DOWALL](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/c870137b-3bff-4018-8a24-5760bc752fe7)
 
 
-- Number of rides for ride duration
+2.Number of rides for ride duration
   
 
 ![RLCMCDASH](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/9b3d3200-6742-4474-8b0e-eb138ee20b82)
 
 
 
-- Number of rides for each month
+3.Number of rides for each month
 
 ![TRIPSMONTH](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/0737ae94-e198-4957-a0a3-dec87b6b9d61)
 
 
 ## Summary of Analysis 
 
-This analysis is done on the data of these 6 months (2020/04 - 2020/09)
+This analysis is done 6 months data (2020/04 - 2020/09)
 
 
-- Casual users ride for  49 minutes on average.
+- Casual users ride for 49 minutes on average.
 - Members ride for 17 minutes on average.
 
-- The most rides are in between these ride lengths 1 min - 10 mins, 10 mins - 20 mins, 20- 30 mins for members.
-- The most rides are in between these ride lengths 1 min - 10 mins, 10 mins - 20 mins, 20- 30 mins and 1 hour - 2 hour for Casual users.
+- For Members, the most rides are in between these ride lengths 1 min - 10 mins, 10 mins - 20 mins, 20- 30 mins.
+- For Casual users, the most rides are in between these ride lengths 1 min - 10 mins, 10 mins - 20 mins, 20- 30 mins and 1 hour - 2 hours.
   
 - The most number of rides were on Saturday for both the users.
 - The trips are low on Monday and increases at Friday reaches peak on Saturday with slight drop off on Sunday.
 
 - Members use the bikes more consistently throughout the week.
-- Casual use the bike more on Saturday, Sunday and Friday.
+- Casual users use the bike more on Saturday, Sunday and Friday.
 - Casual users ride atleast 2 times longer on any day of the week than members.
 
 - Most of the top 10 routes of the Casual and Member users are not same.
 
-- The most number of rides for both the users occur in these months June, August and September were August has most number of rides.
+- The most number of rides for both the users occur in the months of June, August and September where August has most number of rides.
 
   # Act
-
-  ---
+---
 
 How do members and casual riders use Cyclistic bikes differently?
 
 - Members use the bike for regular commuting perhaps to work or school and ride duration is comparetively shorter than casual users.
-- Casual users ride for longer duration of time and the rides are lower on Monday through Thursday and rises on Friday reaches peak at Saturday then slight drop at Sunday.This suggests that they use the bike for sightseeing etc.
+- Casual users ride for longer duration of time and the rides are lower on Monday through Thursday and rises on Friday reaches peak at Saturday then slight drops at Sunday.This suggests that they use the bike for leisure like sightseeing etc.
    
 ### Top recommendations
 
-- 
-
+- Weekend only offer - 
+- Price point friday saturday sunday weekend offer.
+- ride duration offer. between 1 to 30 mins and between 1 hour to 2 hour.
+- offers for top 10 routes used the casual users.
 
 
 
