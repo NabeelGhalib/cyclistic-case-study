@@ -3,7 +3,7 @@
 ### Project Overview 
 ---
 
-This Data Analysis projects aims to provide insights into usage of the cyclistic program by the members and casual users. By Analyzing various aspects of the cycle trips data we can identify trends, make Data-driven recommendation to improve the company. 
+This Data Analysis project aims to provide insights into usage of the cyclistic program by the members and casual users. By Analyzing various aspects of the cycle trips data we can identify trends, make Data-driven recommendation to improve the company. 
 
 
 ### Scenario
