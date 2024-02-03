@@ -518,17 +518,17 @@ Member :
 
 
 
-2.Number of rides for ride duration
+2.Number of rides for every ride duration
   
 
-![RLCMCDASH](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/a6186915-1494-4704-9b6b-7f7fda521d58)
-
+![RLCMCDashboard 1](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/d136838f-fd31-499c-82ab-8a723b1bb23d)
 
 
 
 3.Number of rides for each month
 
 ![TRIPSMONTH](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/0737ae94-e198-4957-a0a3-dec87b6b9d61)
+
 
 
 ## Summary of Analysis 
@@ -554,6 +554,7 @@ This analysis is done 6 months data (2020/04 - 2020/09)
 - The most number of rides for both the users occur in the months of June, August and September where August has most number of rides.
 
 
+
 # Act
 ---
 
@@ -561,6 +562,7 @@ How do members and casual riders use Cyclistic bikes differently?
 
 - Members use the bike for regular commuting perhaps to work or school and ride duration is comparetively shorter than casual users.
 - Casual users ride for longer duration of time and the rides are lower on Monday through Thursday and rises on Friday reaches peak at Saturday then slight drops at Sunday.This suggests that they use the bike for leisure like sightseeing etc.
+
    
 ### Top recommendations
 
