@@ -362,6 +362,17 @@ group by member_casual
 
 #### Output
 
+![Screenshot (111)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/f06daf70-a976-47b7-b9e2-ec89d6de2f64)
+![Screenshot (112)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/3d460e74-fd2e-4bf4-8ca5-626564f06ff9)
+![Screenshot (113)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/b74a744c-03de-4e7d-964b-127b73edc89f)
+![Screenshot (114)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/a351005f-cd4d-48da-a0e9-c71e9356136d)
+![Screenshot (115)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/61481c5d-98aa-4cf8-9826-afab1f1e7a70)
+![Screenshot (116)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/c08a6e2f-8ff1-4c72-bc66-8f273b0750a5)
+![Screenshot (117)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/f21e4421-f6ed-473f-bdd9-28432c814eb6)
+![Screenshot (118)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/5b192519-c562-46e5-b859-57e233de0a3b)
+![Screenshot (122)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/515ccf3f-8687-4769-bac7-edbb98274629)
+![Screenshot (119)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/54ffafc1-b092-4483-a4e6-fd7d1853fa43)
+![Screenshot (120)](https://github.com/NabeelGhalib/cyclistic-case-study/assets/158058093/a72cd44e-a4e7-4077-ac4e-c03ee5f4b4f6)
 
 
 
