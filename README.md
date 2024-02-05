@@ -460,7 +460,7 @@ order by member_casual, total_count desc
 The most number of trips were from the following days Saturday, Sunday and Friday.
 
 
-5. Now finding out the top 10 used routes for the users.
+5. Now finding out the top 10 routes used by the users.
 
 ```sql
 
@@ -473,6 +473,7 @@ count(ride_id) as rides
 
 from cycletrips
 where member_casual = 'casual' and start_station_name is not null and end_station_name is not null
+
 group by start_station_name,end_station_name
 order by rides desc
 
@@ -487,6 +488,7 @@ count(ride_id) as rides
 
 from cycletrips
 where member_casual = 'casual' and start_station_name is not null and end_station_name is not null
+
 group by start_station_name,end_station_name
 order by rides desc
 
@@ -533,8 +535,6 @@ Member :
 
 ## Summary of Analysis 
 
-This analysis is done 6 months data (2020/04 - 2020/09)
-
 
 - Casual users ride for 49 minutes on average.
 - Members ride for 17 minutes on average.
@@ -568,7 +568,7 @@ How do members and casual riders use Cyclistic bikes differently?
 
 - **Weekend only**  offer - Provide an offer at a lower price than the annual membership price where they can use the cycle for these 3 days i.e Friday, Saturday and Sunday which will attract the casual users to convert to annual member.
 - **Ride duration** offer - an offer for casual users who ride for these durations 1) Between 1 min - 30 mins 2) Between 1 hour - 2 hours.
-- **Top Routes** offer - an offer based on the top 10 used routes by casual users.
+- **Top Routes** offer - an offer based on the top 10 routes used by casual users.
 
   
 
