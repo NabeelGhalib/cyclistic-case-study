@@ -535,7 +535,6 @@ Member :
 
 ## Summary of Analysis 
 
-
 - Casual users ride for 49 minutes on average.
 - Members ride for 17 minutes on average.
 
