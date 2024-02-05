@@ -87,7 +87,7 @@ member_casual varchar);
 
 copy cycle_trip_04 from 'F:\Data Analytics\Case study\Cyclistic\202004-divvy-tripdata.csv' csv header;
 ```
-uploaded all the other dataset by the above method
+uploaded all the other datasets by the above method
 
 ### Processing data (Data Cleaning)
 ---
