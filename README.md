@@ -21,7 +21,7 @@ Cyclistic Executive Team
 #### Secondary Stakeholders:
 Marketing Analytics Team 
 
-### Data Analysis
+### Data Analysis Phases
 ---
 
 - #### ASK
