@@ -538,8 +538,8 @@ Member :
 - Casual users ride for 49 minutes on average.
 - Members ride for 17 minutes on average.
 
-- For Members, the most rides are in between these ride lengths 1 min - 10 mins, 10 mins - 20 mins, 20- 30 mins.
-- For Casual users, the most rides are in between these ride lengths 1 min - 10 mins, 10 mins - 20 mins, 20- 30 mins and 1 hour - 2 hours.
+- For Members, the most rides are in between these ride lengths 1 min - 10 mins, 10 mins - 20 mins, 20 mins - 30 mins.
+- For Casual users, the most rides are in between these ride lengths 1 min - 10 mins, 10 mins - 20 mins, 20 mins - 30 mins and 1 hour - 2 hours.
   
 - The most number of rides were on Saturday for both the users.
 - The trips are low on Monday and increases at Friday reaches peak on Saturday with slight drop off on Sunday.
