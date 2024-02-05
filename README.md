@@ -100,7 +100,7 @@ uploaded all the other datasets by the above method
 
 ### Cleaning
 
-1.I can find out the time it takes for every ride to complete by subtracting started_at from ended_at
+1. I can find out the time it takes for every ride to complete by subtracting started_at from ended_at
 
 ```sql
 
@@ -111,7 +111,7 @@ from cycle_trip_04
 By doing this I found that there are some negative values in ride_length in all the datasets,
 i.e. ended_at time was less than started_at ex- started_at - '2020-04-02 18:30:00' , ended_at - '2020-04-02 18:25:00' this is not possible so I gathered that the values were entered in wrong columns.
 
-2.So I swapped the values of ended_at and started_at where the difference was in negative.
+2. So I swapped the values of ended_at and started_at where the difference was in negative.
 
 ```sql
 
@@ -123,7 +123,7 @@ where (ended_at-started_at) < '00:00:00'
 ```
 and did that for all the other datasets.
 
-3.By looking at the datasets I know that all 6 datasets that I am going to work with have matching column names and those columns have same data types, so I combine them into one using union all
+3. By looking at the datasets I know that all 6 datasets that I am going to work with have matching column names and those columns have same data types, so I combine them into one using union all
 
 ```sql
 
@@ -143,7 +143,7 @@ select * from cycle_trip_09)
 
 ```
 
-4.Then I checked for null values, incomplete data and spelling mistakes in all the columns.
+4. Then I checked for null values, incomplete data and spelling mistakes in all the columns.
 
 
 ```sql
@@ -161,7 +161,7 @@ where ride_id is null
 and so on.
 
 
-5.Finding out the number of characters present for every ride_id
+5. Finding out the number of characters present for every ride_id
 
 
 ```sql
@@ -172,7 +172,7 @@ select length(ride_id) from cycletripsall
 
 There are 16 characters.
 
-6.By knowing this we can check if there are ids which does not have same no. of characters.
+6. By knowing this we can check if there are ids which does not have same no. of characters.
 
 
 ```sql
@@ -185,17 +185,17 @@ where length(ride_id) != '16'
 There were none.
 
 
-7.Finding total rides for every day of the week.
+7. Making ride_length and Day of the week columns
 
 
 ```sql
 
-select *, (ended_at-started_at) as ride_length, to_char(started_at, 'DY') as day_started_at
+select *, (ended_at-started_at) as ride_length, to_char(started_at, 'DY') as started_at_day
 from cycletripsall
 
 ```
 
-8.Now saving the table.
+8. Now saving the table.
 
 
 ```sql
