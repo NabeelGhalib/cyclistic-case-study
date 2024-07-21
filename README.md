@@ -63,7 +63,7 @@ Note: Cyclistic is a fictional company, hence the datasets contain the name of a
 
 ### Tools Used
 
-- SQL - Postgresql - Data Cleaning and Data Analysis.
+- SQL - PostgreSQL - Data Cleaning and Data Analysis.
 - Tableau - Data Visualization.
 
 
