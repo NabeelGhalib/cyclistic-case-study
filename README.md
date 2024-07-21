@@ -1,4 +1,6 @@
-# Cyclistic-Case-Study
+# Cyclistic - A bike share analysis
+# Name - Nabeel Ghalib
+
 
 ### Project Overview 
 ---
